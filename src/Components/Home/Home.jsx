@@ -1,10 +1,11 @@
+import AutoPoll from "../AutoPoll/AutoPoll";
 
 
 const Home = () => {
  
     return (
-        <div>
-     
+        <div className="w-4/5 mx-auto mt-20 flex items-center justify-center">
+            <AutoPoll></AutoPoll>
         </div>
     );
 };

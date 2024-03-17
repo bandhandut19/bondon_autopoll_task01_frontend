@@ -9,6 +9,7 @@ import Root from './Components/Root/Root';
 import Home from './Components/Home/Home';
 import Register from './Components/Register/Register';
 import Login from './Components/Login/Login';
+import AdminPanel from './Components/AdminPanel/AdminPanel';
 
 
 
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/adminpanel',
+        element: <AdminPanel></AdminPanel>
       },
       {
         path: '/register',
