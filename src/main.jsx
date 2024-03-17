@@ -11,11 +11,12 @@ import Register from './Components/Register/Register';
 import Login from './Components/Login/Login';
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    children:[
+    children: [
       {
         path: '/',
         element: <Home></Home>
@@ -34,6 +35,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <RouterProvider router={router} />
+    
+      <RouterProvider router={router} />
+    
   </React.StrictMode>,
 )
