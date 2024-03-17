@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
-import { userEmail } from "../Login/Login";
+// import { userEmail } from "../Login/Login";
 const Navbar = () => {
-    const email = userEmail
+    // const email = userEmail
     return (
         <div className="navbar bg-orange-500 lg:px-20">
             <div className="navbar-start">
