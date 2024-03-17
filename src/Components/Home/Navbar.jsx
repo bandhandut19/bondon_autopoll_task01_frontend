@@ -24,11 +24,13 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {email != null ? (
+                {/* {email != null ? (
                     <Link to='/' className="btn bg-green-400 border-none hover:bg-green-300">Logout</Link>
                 ) : (
                     <Link to='/register' className="btn bg-green-400 border-none hover:bg-green-300">Register</Link>
-                )}
+                )} */}
+
+                <Link to='/login' className="btn bg-green-400 border-none hover:bg-green-300">Login</Link>
 
             </div>
         </div>
