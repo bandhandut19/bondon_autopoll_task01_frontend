@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
-
+import { userEmail } from "../Login/Login";
 const Navbar = () => {
+    const email = userEmail
     return (
         <div className="navbar bg-orange-500 lg:px-20">
             <div className="navbar-start">
@@ -19,11 +20,16 @@ const Navbar = () => {
                 <ul className="menu menu-horizontal px-1">
                     <li><NavLink to='/'>Home</NavLink></li>
                     {/* <li><NavLink to='/adminpanel'>AdminPanel</NavLink></li> */}
-                    
+
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to='/register' className="btn bg-green-400 border-none hover:bg-green-300">Register</Link>
+                {email != null ? (
+                    <Link to='/' className="btn bg-green-400 border-none hover:bg-green-300">Logout</Link>
+                ) : (
+                    <Link to='/register' className="btn bg-green-400 border-none hover:bg-green-300">Register</Link>
+                )}
+
             </div>
         </div>
     );

@@ -3,7 +3,10 @@ import { Link , useNavigate} from "react-router-dom";
 import axios from 'axios'
 import bcrypt from "bcryptjs";
 
+
+export let userEmail = null;
 const Login = () => {
+    
     const navigate = useNavigate()
     const [users, setUsers] = useState([]);
 
@@ -28,7 +31,7 @@ const Login = () => {
         }
     };
     
-    
+   
     const handleLogin = async(e) => {
     e.preventDefault()
     const form = e.target
@@ -40,7 +43,7 @@ const Login = () => {
     
     if(vaildateEmail){
         console.log("Email found")
-
+        
         const validatePasswords= async(users, password)=> {
             const validatePassPromises = users.map(async user => {
                 return await comaprePasswords(password, user.hashedPassword);
@@ -54,7 +57,7 @@ const Login = () => {
         validatePasswords(users, password)
         .then(result => {
             if(result == true){
-
+                userEmail = email
                 navigate('/')
             }
         })

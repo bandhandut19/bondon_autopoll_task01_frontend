@@ -9,6 +9,7 @@ const AdminPanel = () => {
         axios.get('http://localhost:5000/users')
             .then(res => {
                 setUsers(res.data);
+                console.log(res.data)
             })
             .catch(error => {
                 console.error(error);
