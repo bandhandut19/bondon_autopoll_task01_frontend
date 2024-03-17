@@ -22,7 +22,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn bg-green-400 border-none hover:bg-green-300">Register</a>
+                <Link to='/register' className="btn bg-green-400 border-none hover:bg-green-300">Register</Link>
             </div>
         </div>
     );
