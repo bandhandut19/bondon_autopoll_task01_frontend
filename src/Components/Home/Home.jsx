@@ -1,5 +1,5 @@
 import AutoPoll from "../AutoPoll/AutoPoll";
-import { userEmail } from "../Login/Login";
+// import { userEmail } from "../Login/Login";
 
 const Home = () => {
    

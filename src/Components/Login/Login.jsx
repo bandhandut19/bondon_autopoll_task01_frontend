@@ -42,7 +42,7 @@ const Login = () => {
     
     
     if(vaildateEmail){
-        console.log("Email found")
+        // console.log("Email found")
         
         const validatePasswords= async(users, password)=> {
             const validatePassPromises = users.map(async user => {
