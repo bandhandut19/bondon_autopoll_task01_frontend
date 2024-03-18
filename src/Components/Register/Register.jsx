@@ -1,21 +1,12 @@
 import { Link, useNavigate } from "react-router-dom";
 import bcrypt from "bcryptjs";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
+import { AuthContext } from "../Providers/UseridProvider";
 const Register = () => {
     const navigate = useNavigate()
     const [emailError, setEmailError] = useState('')
-    const [users, setUsers] = useState([]);
-
-    useEffect(() => {
-        axios.get('http://localhost:5000/users')
-            .then(res => {
-                setUsers(res.data);
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    }, []);
+   const {users,setPosted} =useContext(AuthContext)
 
     const handleRegister = async (e) => {
         e.preventDefault()
@@ -31,7 +22,9 @@ const Register = () => {
         
         
         if (isValidEmail) {
+            const userId = `user_${users.length + 1}`;
             const userInfo = {
+                id: userId,
                 name,
                 email,
                 hashedPassword,
@@ -39,7 +32,7 @@ const Register = () => {
             }
             axios.post('http://localhost:5000/users', userInfo)
                 .then(res => {
-                    console.log(res.data)
+                    setPosted(res.data)
                 })
                 .catch(error => {
                     console.error(error)
@@ -50,11 +43,6 @@ const Register = () => {
         else {
             setEmailError("Email already exists.Please use a different email")
         }
-
-
-
-
-
 
     }
     return (

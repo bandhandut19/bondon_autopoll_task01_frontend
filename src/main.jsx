@@ -9,7 +9,9 @@ import Root from './Components/Root/Root';
 import Home from './Components/Home/Home';
 import Register from './Components/Register/Register';
 import Login from './Components/Login/Login';
-import AdminPanel from './Components/AdminPanel/AdminPanel';
+import UseridProvider from './Components/Providers/UseridProvider';
+
+
 
 
 
@@ -21,10 +23,6 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
-      },
-      {
-        path: '/adminpanel',
-        element: <AdminPanel></AdminPanel>
       },
       {
         path: '/register',
@@ -40,8 +38,10 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    
+    <UseridProvider>
       <RouterProvider router={router} />
-    
+    </UseridProvider>
+
+
   </React.StrictMode>,
 )

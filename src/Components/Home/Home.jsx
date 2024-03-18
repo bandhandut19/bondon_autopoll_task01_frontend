@@ -1,21 +1,23 @@
-import { userEmail } from "../Login/Login";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../Providers/UseridProvider";
 
-export let clickedUsers = [];
+export let clickedUsers = null;
 
 const Home = () => {
-    const navigate = useNavigate();
-
-    const handleClick = () => {
-        if (userEmail && !clickedUsers.includes(userEmail)) {
-            clickedUsers.push(userEmail);
-        }
-        navigate('/adminpanel');
-    };
-
+    const{userId,setClickedUsers,setPostedClicks} = useContext(AuthContext)
+    
+    const handleAutoPoll = ()=>{
+       
+    }
     return (
         <div className="w-4/5 mx-auto mt-20 flex items-center justify-center">
-            <button onClick={handleClick} className="btn btn-outline btn-success">Auto Poll</button>
+            {
+                userId ?
+                    <Link to='/'>
+                        <button onClick={handleAutoPoll} className="btn btn-outline btn-success">Auto Poll</button>
+                    </Link> : "To view the auto poll option you need to Login / Register"
+            }
         </div>
     );
 };
