@@ -10,6 +10,7 @@ import Home from './Components/Home/Home';
 import Register from './Components/Register/Register';
 import Login from './Components/Login/Login';
 import UseridProvider from './Components/Providers/UseridProvider';
+import AutoPoll from './Components/AutoPoll/AutoPoll';
 
 
 
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login></Login>
+      },
+      {
+        path: '/autopoll',
+        element: <AutoPoll></AutoPoll>
       },
     ]
   },

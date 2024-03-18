@@ -23,7 +23,17 @@ const UseridProvider = ({ children }) => {
             });
     }, [posted])
 
-    
+    useEffect(() => {
+        axios.get('http://localhost:5000/clickedusers')
+            .then(res => {
+                setClickedUsers(res.data);
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    }, [postedCliks])
+
+
 
     const authState = {
         userId,
