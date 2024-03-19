@@ -1,7 +1,12 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-// import { userEmail } from "../Login/Login";
+import { AuthContext } from "../Providers/UseridProvider";
+
 const Navbar = () => {
-    // const email = userEmail
+    const {userId,setUserId} = useContext(AuthContext)
+    const handleLogout = ()=>{
+        setUserId('')
+    }
     return (
         <div className="navbar bg-orange-500 lg:px-20">
             <div className="navbar-start">
@@ -24,13 +29,13 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                {/* {email != null ? (
-                    <Link to='/' className="btn bg-green-400 border-none hover:bg-green-300">Logout</Link>
+                {userId ? (
+                    <Link to='/' onClick={handleLogout} className="btn bg-green-400 border-none hover:bg-green-300">Logout</Link>
                 ) : (
-                    <Link to='/register' className="btn bg-green-400 border-none hover:bg-green-300">Register</Link>
-                )} */}
+                    <Link to='/login' className="btn bg-green-400 border-none hover:bg-green-300">Login</Link>
+                )}
 
-                <Link to='/login' className="btn bg-green-400 border-none hover:bg-green-300">Login</Link>
+                {/* <Link to='/login' className="btn bg-green-400 border-none hover:bg-green-300">Login</Link> */}
 
             </div>
         </div>
