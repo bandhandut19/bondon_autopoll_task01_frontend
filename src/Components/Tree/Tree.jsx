@@ -38,12 +38,12 @@ const Tree = ({ tree }) => {
         if (children.length === 0) return null;
 
         return (
-            <ul className="grid grid-cols-3 gap-3 overflow-auto">
+            <ul className="grid grid-cols-3 gap-x-1 w-full ">
                 {children.map((child, index) => (
-                    <li className="mt-2" key={index}>
-                        <button onClick={() => handleUserClick(child)} className="btn">
-                            {child}
-                        </button>
+                    <div className="py-2 gap-x-1 flex flex-col " key={index}>
+                        <div onClick={() => handleUserClick(child)} className="px-1 py-2 bg-white rounded-lg text-xs  overflow-x-auto cursor-pointer">
+                            <h1 className=" text-center">{child}</h1>
+                        </div>
 
                         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
                             <div className="modal-box bg-orange-400 text-slate-700">
@@ -63,23 +63,23 @@ const Tree = ({ tree }) => {
                         </dialog>
 
                         {renderChildren(child)}
-                    </li>
+                    </div>
                 ))}
             </ul>
         );
     };
 
     return (
-        <div className="border-2 border-red-300">
+        <div className="px-5">
             <ul className="flex flex-col items-center justify-center">
-                <li className="bg-slate-400 px-3 py-2 rounded-md mb-2 btn">{tree}</li>
-                <ul className="grid grid-cols-3 gap-5 items-center justify-center text-center">
+                <li className="bg-slate-400 px-3 py-2 rounded-md mb-2 cursor-pointer">{tree}</li>
+                <ul className="flex w-full gap-2 ">
                     {/* {grid} */}
                     {getChildren(tree).map((child, index) => (
-                        <li className="bg-slate-300 px-2 py-3 rounded-lg" key={index}>
-                            <button onClick={() => handleUserClick(child)} className="btn py-1 mb-2">
-                                {child}
-                            </button>
+                        <li className="bg-slate-300 px-2 py-3 rounded-lg w-full" key={index}>
+                            <div onClick={() => handleUserClick(child)} className="p-1 bg-white text-xs rounded-lg cursor-pointer">
+                                <h1 className=" text-center">{child}</h1>
+                            </div>
                             {renderChildren(child)}
                         </li>
                     ))}

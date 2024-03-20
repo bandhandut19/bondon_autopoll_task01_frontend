@@ -32,7 +32,7 @@ const Register = () => {
                 hashedPassword,
                 date
             }
-            axios.post('http://localhost:5000/users', userInfo)
+            axios.post('https://bondon-autopoll-task01-backend.vercel.app/users', userInfo)
                 .then(res => {
                     setPosted(res.data)
                 })

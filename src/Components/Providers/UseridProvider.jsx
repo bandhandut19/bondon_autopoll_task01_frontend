@@ -14,7 +14,7 @@ const UseridProvider = ({ children }) => {
     const [postedCliks,setPostedClicks] = useState(null)
 
     useEffect(() => {
-        axios.get('http://localhost:5000/users')
+        axios.get('https://bondon-autopoll-task01-backend.vercel.app/users')
             .then(res => {
                 setUsers(res.data);
             })
@@ -24,7 +24,7 @@ const UseridProvider = ({ children }) => {
     }, [posted])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/clickedusers')
+        axios.get('https://bondon-autopoll-task01-backend.vercel.app/clickedusers')
             .then(res => {
                 setClickedUsers(res.data);
             })
