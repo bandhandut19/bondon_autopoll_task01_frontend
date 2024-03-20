@@ -33,12 +33,13 @@ const UseridProvider = ({ children }) => {
             });
     }, [postedCliks])
 
-
+   
 
     const authState = {
         userId,
         setUserId,
         users,
+        posted,
         setPosted,
         setClickedUsers,
         clickedUsers,

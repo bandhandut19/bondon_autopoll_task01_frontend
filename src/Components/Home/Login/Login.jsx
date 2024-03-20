@@ -1,7 +1,9 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import bcrypt from "bcryptjs";
-import { AuthContext } from "../Providers/UseridProvider";
+import { AuthContext } from "../../Providers/UseridProvider";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const navigate = useNavigate()
@@ -43,6 +45,14 @@ const Login = () => {
                         console.log(users)
                         const id = users.find(user => user.email == email)
                         setUserId(id.id)
+                        toast("Welcome to Auto Poll", {
+                            position: "top-center",
+                            autoClose: 1000, // Close after 1 second
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                        });
                         navigate('/')
                     }
                 })
@@ -52,7 +62,14 @@ const Login = () => {
 
         }
         else {
-            console.log("Email not found")
+            toast("Email is not registered", {
+                position: "top-center",
+                autoClose: 1000, // Close after 1 second
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            });
         }
 
     }

@@ -3,6 +3,8 @@ import bcrypt from "bcryptjs";
 import axios from "axios";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/UseridProvider";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Register = () => {
     const navigate = useNavigate()
     const [emailError, setEmailError] = useState('')
@@ -37,10 +39,25 @@ const Register = () => {
                 .catch(error => {
                     console.error(error)
                 })
-
+                toast("Registration Successful", {
+                    position: "top-center",
+                    autoClose: 1000, // Close after 1 second
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                });
             navigate('/login')
         }
         else {
+            toast("Email already exists.Please use a different email", {
+                position: "top-center",
+                autoClose: 1000, // Close after 1 second
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            });
             setEmailError("Email already exists.Please use a different email")
         }
 

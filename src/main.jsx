@@ -8,7 +8,7 @@ import {
 import Root from './Components/Root/Root';
 import Home from './Components/Home/Home';
 import Register from './Components/Register/Register';
-import Login from './Components/Login/Login';
+import Login from './Components/Home/Login/Login';
 import UseridProvider from './Components/Providers/UseridProvider';
 import AutoPoll from './Components/AutoPoll/AutoPoll';
 

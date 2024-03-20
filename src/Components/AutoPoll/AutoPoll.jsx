@@ -7,7 +7,7 @@ const AutoPoll = () => {
 
 
     return (
-        <div className=" w-4/5 mx-auto mt-20 flex flex-col gap-5 items-center justify-center">
+        <div className=" w-full mt-10">
             {/* {clickedUsers?.length} */}
 
             <Tree key={userId} tree={userId}></Tree>
