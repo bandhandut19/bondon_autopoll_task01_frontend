@@ -25,10 +25,10 @@ const Tree = ({ tree }) => {
     return (
         <div className="">
             <ul className="">
-                <li className="">{tree}</li>
-                <ul>
+                <li className="bg-slate-400 px-2 py-1 rounded-lg mb-2 text-center">{tree}</li>
+                <ul className="grid grid-cols-3 gap-2 text-center items-center justify-center">
                     {descendants.map((descendant, index) => (
-                        <li key={index}>{descendant}</li>
+                        <li className="bg-slate-400 px-2 py-1 rounded-lg" key={index}>{descendant}</li>
                     ))}
                 </ul>
             </ul>
