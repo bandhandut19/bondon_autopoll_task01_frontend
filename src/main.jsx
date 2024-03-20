@@ -12,6 +12,7 @@ import Login from './Components/Login/Login';
 import UseridProvider from './Components/Providers/UseridProvider';
 import AutoPoll from './Components/AutoPoll/AutoPoll';
 import PracticeTree from './Components/PracticeTree/PracticeTree';
+import Tree from './Components/Tree/Tree';
 
 
 

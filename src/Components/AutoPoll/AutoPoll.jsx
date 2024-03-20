@@ -1,17 +1,21 @@
 import { useContext } from "react";
 import { AuthContext } from "../Providers/UseridProvider";
-import TreeStructure from "../TreeStucture/TreeStructure";
+import Tree from "../Tree/Tree";
 
 const AutoPoll = () => {
-    const {clickedUsers} = useContext(AuthContext)
+    const {clickedUsers,userId} = useContext(AuthContext)
+
+    
     return (
-        <div className=" w-4/5 mx-auto mt-20 flex items-center justify-center">
-            {clickedUsers?.length}
-            {
-                clickedUsers?.map(user=> <TreeStructure key={user._id} user={user}></TreeStructure>)
-            }
+        <div className=" w-4/5 mx-auto mt-20 flex flex-col gap-5 items-center justify-center">
+            {/* {clickedUsers?.length} */}
+
+            <Tree key={userId} tree={userId}></Tree>
+            
         </div>
     );
 };
 
+// console.log(leftChild, middleChild, rightChild)
+    // console.log(user?.children[0]?.leftChild?.userId)
 export default AutoPoll;
