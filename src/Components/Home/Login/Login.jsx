@@ -45,7 +45,7 @@ const Login = () => {
                         console.log(users)
                         const id = users.find(user => user.email == email)
                         const userId = id.id
-                        localStorage.setItem('userId',userId)
+                        localStorage.setItem('userId',JSON.stringify(userId))
                         setUserId(id.id)
                         toast("Welcome to Auto Poll", {
                             position: "top-center",
