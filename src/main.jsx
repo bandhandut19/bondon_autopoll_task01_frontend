@@ -11,6 +11,7 @@ import Register from './Components/Register/Register';
 import Login from './Components/Home/Login/Login';
 import UseridProvider from './Components/Providers/UseridProvider';
 import AutoPoll from './Components/AutoPoll/AutoPoll';
+import ErrorPage from './Components/ErrorPage/ErrorPage';
 
 
 
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
