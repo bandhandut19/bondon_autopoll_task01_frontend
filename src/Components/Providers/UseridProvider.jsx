@@ -13,7 +13,12 @@ const UseridProvider = ({ children }) => {
     const [clickedUsers,setClickedUsers] = useState(null);
     const [postedCliks,setPostedClicks] = useState(null)
 
+    if(userId==null){
 
+        const retivedUser = localStorage.getItem('userId')
+        setUserId(retivedUser)
+        console.log(retivedUser)
+    }
 
     
 

@@ -5,6 +5,7 @@ import { AuthContext } from "../Providers/UseridProvider";
 const Navbar = () => {
     const {userId,setUserId} = useContext(AuthContext)
     const handleLogout = ()=>{
+        localStorage.clear()
         setUserId('')
     }
     return (

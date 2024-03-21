@@ -44,7 +44,8 @@ const Login = () => {
                     if (result == true) {
                         console.log(users)
                         const id = users.find(user => user.email == email)
-                        setUserId(id.id)
+                        localStorage.setItem('userId',id.id)
+                        // setUserId(id.id)
                         toast("Welcome to Auto Poll", {
                             position: "top-center",
                             autoClose: 1000, // Close after 1 second
@@ -54,6 +55,7 @@ const Login = () => {
                             draggable: true,
                         });
                         navigate('/')
+                        window.location.reload();
                     }
                 })
                 .catch(error => {
