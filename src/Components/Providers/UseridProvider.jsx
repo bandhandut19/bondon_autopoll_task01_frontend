@@ -14,12 +14,8 @@ const UseridProvider = ({ children }) => {
     const [postedCliks,setPostedClicks] = useState(null)
 
 
-    const localRetrive = localStorage.getItem('userId')
 
-    if(localRetrive){
-        const userId = JSON.parse(localRetrive)
-        setUserId(userId)
-    }
+    
 
     useEffect(() => {
         axios.get('https://bondon-autopoll-task01-backend.vercel.app/users')

@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const navigate = useNavigate()
-    const { users } = useContext(AuthContext)
+    const { setUserId, users } = useContext(AuthContext)
 
     const comaprePasswords = async (password, hashedPass) => {
         try {
@@ -44,9 +44,7 @@ const Login = () => {
                     if (result == true) {
                         console.log(users)
                         const id = users.find(user => user.email == email)
-                        const userId = id.id
-                        localStorage.setItem('userId',JSON.stringify(userId))
-                        
+                        setUserId(id.id)
                         toast("Welcome to Auto Poll", {
                             position: "top-center",
                             autoClose: 1000, // Close after 1 second
